@@ -62,51 +62,59 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 glass-header">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img
-              src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
-              alt="Veo 3.2 Logo"
-              width={36}
-              height={36}
-              className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
-            />
+            <a href="https://www.virax.ai/">
+              <img
+                src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
+                alt="Veo 3.2 Logo"
+                width={36}
+                height={36}
+                className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
+              />
+            </a>
           </div>
           <nav className="hidden md:flex items-center gap-10">
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#features"
-              aria-label="Navigate to Features section"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Features
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#showcase"
-              aria-label="Navigate to Gallery section"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Gallery
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#pricing"
-              aria-label="Navigate to Pricing section"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Pricing
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#api"
-              aria-label="Navigate to API documentation"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               API
             </a>
           </nav>
           <div className="flex items-center gap-4">
-            <button className="text-white/70 hover:text-white text-sm font-medium px-4">
+            <a
+              href="https://www.virax.ai/"
+              className="text-white/70 hover:text-white text-sm font-medium px-4"
+            >
               Log in
-            </button>
-            <button className="bg-white text-slate-900 hover:bg-white/90 text-sm font-bold px-6 py-2.5 rounded-lg transition-all transform hover:scale-105 shadow-[0_0_18px_rgba(148,163,184,0.45)]">
+            </a>
+            <a
+              href="https://www.virax.ai/"
+              className="bg-white text-slate-900 hover:bg-white/90 text-sm font-bold px-6 py-2.5 rounded-lg transition-all transform hover:scale-105 shadow-[0_0_18px_rgba(148,163,184,0.45)]"
+            >
               Get Started
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -150,12 +158,15 @@ export default function Home() {
                     type="text"
                   />
                 </div>
-                <button className="generate-glow bg-white text-slate-900 hover:bg-white/90 font-bold px-12 py-6 rounded-xl flex items-center justify-center gap-3 transition-all transform active:scale-95 group shadow-[0_0_25px_rgba(124,13,242,0.7)]">
+                <a
+                  href="https://www.virax.ai/"
+                  className="generate-glow bg-white text-slate-900 hover:bg-white/90 font-bold px-12 py-6 rounded-xl flex items-center justify-center gap-3 transition-all transform active:scale-95 group shadow-[0_0_25px_rgba(124,13,242,0.7)]"
+                >
                   <span className="text-lg">Try Veo 3.2 Now</span>
                   <span className="material-symbols-outlined transition-transform group-hover:rotate-12 text-slate-900">
                     bolt
                   </span>
-                </button>
+                </a>
               </div>
               <div className="flex items-center justify-center gap-2 mt-6 flex-wrap">
                 <span className="text-[10px] text-white/30 uppercase tracking-[0.15em] mr-4 font-bold">
@@ -242,8 +253,9 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {currentVideos.map((videoUrl, index) => (
-              <div
+              <a
                 key={videoUrl}
+                href="https://www.virax.ai/"
                 className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
               >
                 <video
@@ -262,14 +274,17 @@ export default function Home() {
                     Video showcase #{index + 1}
                   </p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
           <div className="mt-20 text-center">
-            <button className="px-10 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-medium transition-all hover:scale-105 active:scale-95">
+            <a
+              href="https://www.virax.ai/"
+              className="inline-block px-10 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-medium transition-all hover:scale-105 active:scale-95"
+            >
               Explore All Creations
-            </button>
+            </a>
           </div>
         </section>
 
@@ -387,13 +402,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <img
-                src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
-                alt="Veo 3.2 Logo"
-                width={36}
-                height={36}
-                className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
-              />
+              <a href="https://www.virax.ai/">
+                <img
+                  src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
+                  alt="Veo 3.2 Logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
+                />
+              </a>
             </div>
             <p className="text-white/30 text-sm max-w-xs leading-relaxed">
               Empowering the next generation of storytellers with world-class
@@ -407,22 +424,22 @@ export default function Home() {
               </p>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#features"
-                aria-label="Navigate to Features section"
+                href="https://www.virax.ai/"
+                aria-label="Navigate to ViraX"
               >
                 Features
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#api"
-                aria-label="Navigate to API documentation"
+                href="https://www.virax.ai/"
+                aria-label="Navigate to ViraX"
               >
                 API Docs
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#showcase"
-                aria-label="Navigate to Showcase section"
+                href="https://www.virax.ai/"
+                aria-label="Navigate to ViraX"
               >
                 Showcase
               </a>
@@ -433,19 +450,19 @@ export default function Home() {
               </p>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="https://www.virax.ai/"
               >
                 About Us
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="https://www.virax.ai/"
               >
                 Blog
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="https://www.virax.ai/"
               >
                 Careers
               </a>
@@ -457,7 +474,7 @@ export default function Home() {
               <div className="flex gap-4">
                 <a
                   className="size-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
-                  href="#"
+                  href="https://www.virax.ai/"
                 >
                   <span className="material-symbols-outlined text-lg">
                     brand_awareness
@@ -465,7 +482,7 @@ export default function Home() {
                 </a>
                 <a
                   className="size-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
-                  href="#"
+                  href="https://www.virax.ai/"
                 >
                   <span className="material-symbols-outlined text-lg">hub</span>
                 </a>
@@ -478,22 +495,22 @@ export default function Home() {
           <div className="flex gap-8">
             <a
               className="hover:text-white/40"
-              href="/terms"
-              aria-label="View Terms of Service"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Terms
             </a>
             <a
               className="hover:text-white/40"
-              href="/privacy"
-              aria-label="View Privacy Policy"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Privacy
             </a>
             <a
               className="hover:text-white/40"
-              href="/cookies"
-              aria-label="View Cookie Policy"
+              href="https://www.virax.ai/"
+              aria-label="Navigate to ViraX"
             >
               Cookies
             </a>

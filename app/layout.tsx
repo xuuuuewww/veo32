@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Veo 3.2 Magic Landing Page",
+  title: "Veo 3.2 is coming! AI Image and Video Generation Model for High-Quality Visual Creation",
   description:
-    "Veo 3.2 transforms your wildest imaginations into cinematic 8K reality.",
+    "Veo 3.2 is an advanced AI image and video generation model enabling high-quality text-to-image and text-to-video creation for creative and commercial use.",
+  icons: {
+    icon: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+    shortcut: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+    apple: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+  },
 };
 
 export default function RootLayout({

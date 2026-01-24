@@ -2,13 +2,61 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Veo 3.2 is coming! AI Image and Video Generation Model for High-Quality Visual Creation",
+  title: "Veo 3.2 - AI Image and Video Generation Model for High-Quality Visual Creation",
   description:
     "Veo 3.2 is an advanced AI image and video generation model enabling high-quality text-to-image and text-to-video creation for creative and commercial use.",
+  keywords: [
+    "Veo 3.2",
+    "AI video generation",
+    "AI image generation",
+    "text-to-video",
+    "text-to-image",
+    "AI cinematography",
+    "8K video generation",
+    "artificial intelligence",
+  ],
+  authors: [{ name: "Veo Technologies" }],
+  creator: "Veo Technologies",
+  publisher: "Veo Technologies",
   icons: {
     icon: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
     shortcut: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
     apple: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+  },
+  openGraph: {
+    title: "Veo 3.2 - AI Image and Video Generation Model",
+    description:
+      "Transform your wildest imaginations into cinematic 8K reality with Veo 3.2. The frontier of AI cinematography is here.",
+    url: "https://veo32.com",
+    siteName: "Veo 3.2",
+    images: [
+      {
+        url: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+        width: 1200,
+        height: 630,
+        alt: "Veo 3.2 - AI Video Generation",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veo 3.2 - AI Image and Video Generation Model",
+    description:
+      "Transform your wildest imaginations into cinematic 8K reality with Veo 3.2.",
+    images: ["https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

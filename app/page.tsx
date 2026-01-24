@@ -64,32 +64,38 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <img
               src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
-              alt="V logo"
+              alt="Veo 3.2 Logo"
+              width={36}
+              height={36}
               className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
             />
           </div>
           <nav className="hidden md:flex items-center gap-10">
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="#features"
+              aria-label="Navigate to Features section"
             >
               Features
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="#showcase"
+              aria-label="Navigate to Gallery section"
             >
               Gallery
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="#pricing"
+              aria-label="Navigate to Pricing section"
             >
               Pricing
             </a>
             <a
               className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="#"
+              href="#api"
+              aria-label="Navigate to API documentation"
             >
               API
             </a>
@@ -114,6 +120,7 @@ export default function Home() {
               muted
               playsInline
               preload="auto"
+              aria-label="Veo 3.2 hero video showcasing AI-generated cinematic content"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             >
               <source src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/herovideo2.mp4" type="video/mp4" />
@@ -154,46 +161,46 @@ export default function Home() {
                 <span className="text-[10px] text-white/30 uppercase tracking-[0.15em] mr-4 font-bold">
                   Trending Styles:
                 </span>
-                <a
-                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all"
-                  href="#"
+                <span
+                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60"
+                  aria-label="Trending style: Cyberpunk"
                 >
                   #Cyberpunk
-                </a>
-                <a
-                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all"
-                  href="#"
+                </span>
+                <span
+                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60"
+                  aria-label="Trending style: Studio Ghibli"
                 >
                   #StudioGhibli
-                </a>
-                <a
-                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all"
-                  href="#"
+                </span>
+                <span
+                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60"
+                  aria-label="Trending style: Hyper Realistic"
                 >
                   #HyperRealistic
-                </a>
-                <a
-                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all"
-                  href="#"
+                </span>
+                <span
+                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60"
+                  aria-label="Trending style: Synthwave"
                 >
                   #Synthwave
-                </a>
-                <a
-                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60 hover:text-white hover:bg-primary/20 hover:border-primary/30 transition-all"
-                  href="#"
+                </span>
+                <span
+                  className="px-4 py-1.5 rounded-full bg-white/5 border border-white/5 text-xs text-white/60"
+                  aria-label="Trending style: Anamorphic Shot"
                 >
                   #AnamorphicShot
-                </a>
+                </span>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-24 px-6 max-w-7xl mx-auto">
+        <section id="showcase" className="py-24 px-6 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div>
               <h2 className="text-4xl font-bold tracking-tight mb-3">
-                Community Showcase
+                Community Showcase Created by Veo 3.2
               </h2>
               <p className="text-white/40">
                 Real results generated by creators around the world.
@@ -245,6 +252,7 @@ export default function Home() {
                   muted
                   playsInline
                   preload="metadata"
+                  aria-label={`Community showcase video ${index + 1} from ${activeTab} collection`}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 >
                   <source src={videoUrl} type="video/mp4" />
@@ -381,7 +389,9 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <img
                 src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
-                alt="V logo"
+                alt="Veo 3.2 Logo"
+                width={36}
+                height={36}
                 className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
               />
             </div>
@@ -397,19 +407,22 @@ export default function Home() {
               </p>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="#features"
+                aria-label="Navigate to Features section"
               >
                 Features
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="#api"
+                aria-label="Navigate to API documentation"
               >
                 API Docs
               </a>
               <a
                 className="text-white/40 hover:text-white transition-colors text-sm"
-                href="#"
+                href="#showcase"
+                aria-label="Navigate to Showcase section"
               >
                 Showcase
               </a>
@@ -463,13 +476,25 @@ export default function Home() {
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/20 text-xs">
           <p>© 2024 Veo Technologies. All rights reserved.</p>
           <div className="flex gap-8">
-            <a className="hover:text-white/40" href="#">
+            <a
+              className="hover:text-white/40"
+              href="/terms"
+              aria-label="View Terms of Service"
+            >
               Terms
             </a>
-            <a className="hover:text-white/40" href="#">
+            <a
+              className="hover:text-white/40"
+              href="/privacy"
+              aria-label="View Privacy Policy"
+            >
               Privacy
             </a>
-            <a className="hover:text-white/40" href="#">
+            <a
+              className="hover:text-white/40"
+              href="/cookies"
+              aria-label="View Cookie Policy"
+            >
               Cookies
             </a>
           </div>

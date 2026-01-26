@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     shortcut: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
     apple: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
   },
+  verification: {
+    google: "60obgy5Ja4eGJ55dWEQz8T_HpYOI_1VedKXXP6zXYCs",
+  },
   openGraph: {
     title: "Veo 3.2 - AI Image and Video Generation Model",
     description:

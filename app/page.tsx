@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LazyVideo } from "@/components/LazyVideo";
 
 const trendingVideos = [
   "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/01ec5f2f-84fc-4eaf-a8bc-c2cbd31c5552_hd.mp4",
@@ -55,6 +56,7 @@ const featuredPrompts = [
     prompt:
       "Cinematic drone shot flying through a futuristic Neo-Tokyo at night, heavy rain reflecting neon signs on wet pavement, Cyberpunk 2077 vibe, hyper-realistic 8k, volumetric fog, high contrast lighting.",
     gradient: "from-violet-900/80 via-fuchsia-900/60 to-slate-900",
+    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-1.mp4",
   },
   {
     id: "3d",
@@ -63,6 +65,7 @@ const featuredPrompts = [
     prompt:
       "A fluffy baby polar bear wearing oversized aviator goggles, sitting in a tiny wooden airplane, flying over cotton candy clouds. Pixar style rendering, subsurface scattering on fur, bright warm lighting, 4k render.",
     gradient: "from-amber-900/60 via-orange-800/50 to-slate-900",
+    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-2.mp4",
   },
   {
     id: "macro",
@@ -71,6 +74,7 @@ const featuredPrompts = [
     prompt:
       "Extreme macro time-lapse of a bioluminescent orchid blooming in a dark alien jungle. Glowing purple veins pulsing with light, shallow depth of field, dewdrops glistening, National Geographic quality.",
     gradient: "from-emerald-900/70 via-teal-900/50 to-slate-900",
+    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-4.mp4",
   },
   {
     id: "vintage",
@@ -79,6 +83,7 @@ const featuredPrompts = [
     prompt:
       "Black and white vintage film footage from the 1920s, a busy New York street scene with classic cars and people in hats walking by. Grainy film texture, flickering light, authentic historical atmosphere.",
     gradient: "from-stone-700/70 via-amber-900/30 to-slate-900",
+    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-3.mp4",
   },
 ];
 
@@ -169,7 +174,7 @@ export default function Home() {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-label="Veo 3.2 hero video showcasing AI-generated cinematic content"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             >
@@ -189,7 +194,7 @@ export default function Home() {
               reality. The frontier of AI cinematography is here.
             </p>
             <div className="max-w-3xl mx-auto">
-              <div className="prompt-glow relative flex flex-col md:flex-row w-full bg-white/[0.03] backdrop-blur-2xl border border-white/10 p-3 rounded-2xl transition-all duration-500 shadow-2xl">
+              <div className="prompt-glow relative flex flex-col md:flex-row w-full bg-white/[0.05] backdrop-blur-xl border border-white/10 p-3 rounded-2xl transition-colors duration-300 shadow-xl">
                 <div className="flex flex-1 items-center px-6 py-6">
                   <span className="material-symbols-outlined text-primary mr-4 scale-125">
                     auto_awesome
@@ -249,7 +254,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="showcase" className="py-24 px-6 max-w-7xl mx-auto">
+        <section id="showcase" className="section-below-fold py-24 px-6 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div>
               <h2 className="text-4xl font-bold tracking-tight mb-3">
@@ -300,18 +305,12 @@ export default function Home() {
                 href="https://www.virax.ai/"
                 className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label={`Community showcase video ${index + 1} from ${activeTab} collection`}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                >
-                  <source src={videoUrl} type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 backdrop-blur-[2px]">
+                <LazyVideo
+                  src={videoUrl}
+                  ariaLabel={`Community showcase video ${index + 1} from ${activeTab} collection`}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-end p-6">
                   <p className="text-white text-xs font-medium">
                     Video showcase #{index + 1}
                   </p>
@@ -330,7 +329,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 px-6 relative overflow-hidden min-h-screen flex flex-col justify-center">
+        <section className="section-below-fold py-24 md:py-32 px-6 relative overflow-hidden min-h-screen flex flex-col justify-center">
           <div className="max-w-7xl mx-auto relative z-10 w-full">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -343,7 +342,7 @@ export default function Home() {
                 standard.
               </p>
             </div>
-            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.03]">
               <table className="w-full min-w-[640px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-white/10">
@@ -535,7 +534,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="featured-prompts" className="min-h-screen py-24 md:py-32 px-6 relative overflow-hidden flex flex-col justify-center">
+        <section id="featured-prompts" className="section-below-fold min-h-screen py-24 md:py-32 px-6 relative overflow-hidden flex flex-col justify-center">
           <div className="max-w-7xl mx-auto relative z-10 w-full">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -552,8 +551,12 @@ export default function Home() {
                   className="group relative rounded-2xl overflow-hidden p-[1px] bg-gradient-to-br from-white/20 via-primary/30 to-white/10 shadow-xl"
                 >
                   <div className="relative h-full rounded-2xl bg-slate-900/90 border border-white/5 p-0 flex flex-col">
-                    <div className={`aspect-video w-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0`} aria-hidden>
-                      <span className="material-symbols-outlined text-white/20 text-6xl">movie</span>
+                    <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-slate-900" aria-hidden>
+                      <LazyVideo
+                        src={item.videoUrl}
+                        ariaLabel={`Featured prompt: ${item.tag}`}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
                     </div>
                     <div className="p-5 md:p-6 flex flex-col flex-1">
                       <span className="inline-flex items-center gap-1.5 w-fit px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30 mb-3">
@@ -591,7 +594,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="evolution" className="py-24 md:py-32 px-6 relative overflow-hidden">
+        <section id="evolution" className="section-below-fold py-24 md:py-32 px-6 relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -602,7 +605,7 @@ export default function Home() {
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-sm overflow-hidden">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/60 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
                     <thead>
@@ -636,7 +639,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-32 px-6 relative overflow-hidden">
+        <section className="section-below-fold py-32 px-6 relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -690,7 +693,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-32 px-6 max-w-4xl mx-auto">
+        <section className="section-below-fold py-32 px-6 max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold tracking-tight mb-4">
               Frequently Asked Questions
@@ -746,7 +749,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-white/5 py-20 px-6 bg-black/40 backdrop-blur-3xl">
+      <footer className="border-t border-white/5 py-20 px-6 bg-black/50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">

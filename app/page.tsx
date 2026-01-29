@@ -51,37 +51,37 @@ const animeVideos = [
 const featuredPrompts = [
   {
     id: "cinematic",
-    tag: "Cinematic",
+    tag: "Metallic Couture",
     tagIcon: "movie",
     prompt:
-      "Cinematic drone shot flying through a futuristic Neo-Tokyo at night, heavy rain reflecting neon signs on wet pavement, Cyberpunk 2077 vibe, hyper-realistic 8k, volumetric fog, high contrast lighting.",
+      "Cinematic fashion film: a model in a metallic silver gown under a single spotlight in a dark minimalist studio, glossy floor reflections, slow dolly-in, hyper-realistic 8k, volumetric haze, high-contrast lighting, anamorphic look.",
     gradient: "from-violet-900/80 via-fuchsia-900/60 to-slate-900",
     videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-1.mp4",
   },
   {
     id: "3d",
-    tag: "3D Animation",
+    tag: "Mad Max",
     tagIcon: "smart_toy",
     prompt:
-      "A fluffy baby polar bear wearing oversized aviator goggles, sitting in a tiny wooden airplane, flying over cotton candy clouds. Pixar style rendering, subsurface scattering on fur, bright warm lighting, 4k render.",
+      "Low-angle tracking shot of a biker racing down a sunlit desert highway, armored rider, roaring muscle trucks kicking up dust, Mad Max chase vibe, cinematic teal-orange grade, 4K, motion blur.",
     gradient: "from-amber-900/60 via-orange-800/50 to-slate-900",
     videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-2.mp4",
   },
   {
     id: "macro",
-    tag: "Macro Nature",
+    tag: "Space Drift",
     tagIcon: "grass",
     prompt:
-      "Extreme macro time-lapse of a bioluminescent orchid blooming in a dark alien jungle. Glowing purple veins pulsing with light, shallow depth of field, dewdrops glistening, National Geographic quality.",
+      "Cinematic orbital shot: lone astronaut drifting by a damaged satellite above Earth's curved horizon, sunrise lens flare, floating debris, slow rotating camera, ultra-real 4K, deep space contrast.",
     gradient: "from-emerald-900/70 via-teal-900/50 to-slate-900",
     videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-4.mp4",
   },
   {
     id: "vintage",
-    tag: "Vintage 1920s",
+    tag: "Neon Cyberpunk",
     tagIcon: "movie_filter",
     prompt:
-      "Black and white vintage film footage from the 1920s, a busy New York street scene with classic cars and people in hats walking by. Grainy film texture, flickering light, authentic historical atmosphere.",
+      "Cinematic street-level shot of a lone hooded figure walking through a rain-soaked neon alley in Neo-Tokyo, steam vents, wet pavement reflections, cyberpunk vibe, ultra-real 8k, volumetric fog.",
     gradient: "from-stone-700/70 via-amber-900/30 to-slate-900",
     videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-3.mp4",
   },

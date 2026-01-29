@@ -47,8 +47,50 @@ const animeVideos = [
   "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/fd33361c-5a1a-4e88-bbcb-930d76ba7766_hd.mp4",
 ];
 
+const featuredPrompts = [
+  {
+    id: "cinematic",
+    tag: "Cinematic",
+    tagIcon: "movie",
+    prompt:
+      "Cinematic drone shot flying through a futuristic Neo-Tokyo at night, heavy rain reflecting neon signs on wet pavement, Cyberpunk 2077 vibe, hyper-realistic 8k, volumetric fog, high contrast lighting.",
+    gradient: "from-violet-900/80 via-fuchsia-900/60 to-slate-900",
+  },
+  {
+    id: "3d",
+    tag: "3D Animation",
+    tagIcon: "smart_toy",
+    prompt:
+      "A fluffy baby polar bear wearing oversized aviator goggles, sitting in a tiny wooden airplane, flying over cotton candy clouds. Pixar style rendering, subsurface scattering on fur, bright warm lighting, 4k render.",
+    gradient: "from-amber-900/60 via-orange-800/50 to-slate-900",
+  },
+  {
+    id: "macro",
+    tag: "Macro Nature",
+    tagIcon: "grass",
+    prompt:
+      "Extreme macro time-lapse of a bioluminescent orchid blooming in a dark alien jungle. Glowing purple veins pulsing with light, shallow depth of field, dewdrops glistening, National Geographic quality.",
+    gradient: "from-emerald-900/70 via-teal-900/50 to-slate-900",
+  },
+  {
+    id: "vintage",
+    tag: "Vintage 1920s",
+    tagIcon: "movie_filter",
+    prompt:
+      "Black and white vintage film footage from the 1920s, a busy New York street scene with classic cars and people in hats walking by. Grainy film texture, flickering light, authentic historical atmosphere.",
+    gradient: "from-stone-700/70 via-amber-900/30 to-slate-900",
+  },
+];
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"trending" | "cinematic" | "anime">("trending");
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const handleCopyPrompt = async (id: string, text: string) => {
+    await navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
 
   const currentVideos = 
     activeTab === "trending" 
@@ -288,6 +330,312 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-24 md:py-32 px-6 relative overflow-hidden min-h-screen flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto relative z-10 w-full">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                Why <span className="text-primary">Veo 3.2</span> Leads the Field
+              </h2>
+              <p className="text-white/40 max-w-2xl mx-auto text-lg">
+                Comparing the giants of AI video generation in 2026. Which
+                model delivers the best cinematic realism, motion coherence,
+                and prompt adherence? See why Veo 3.2 is the new industry
+                standard.
+              </p>
+            </div>
+            <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+              <table className="w-full min-w-[640px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-4 px-4 md:px-6 text-sm font-semibold text-white/60 uppercase tracking-wider">
+                      <h3 className="text-sm font-semibold uppercase tracking-wider m-0">
+                        Feature
+                      </h3>
+                    </th>
+                    <th className="py-4 px-4 md:px-6 text-sm font-semibold text-white bg-primary/10 border-l border-primary/20">
+                      <h3 className="text-sm font-semibold m-0 flex items-center gap-2">
+                        Google Veo 3.2
+                        <span className="text-xs font-normal text-primary whitespace-nowrap">
+                          Winner 🏆
+                        </span>
+                      </h3>
+                    </th>
+                    <th className="py-4 px-4 md:px-6 text-sm font-semibold text-white/70">
+                      <h3 className="text-sm font-semibold m-0">
+                        OpenAI Sora
+                      </h3>
+                    </th>
+                    <th className="py-4 px-4 md:px-6 text-sm font-semibold text-white/70">
+                      <h3 className="text-sm font-semibold m-0">
+                        Runway Gen-3 Alpha
+                      </h3>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm md:text-base">
+                  {[
+                    {
+                      feature: "Max Resolution",
+                      veo: "4K (Upscaled)",
+                      sora: "1080p",
+                      runway: "1080p / 4K (Turbo)",
+                    },
+                    {
+                      feature: "Video Duration",
+                      veo: "60s+ (Continuous)",
+                      sora: "Up to 60s",
+                      runway: "10s – 40s",
+                    },
+                    {
+                      feature: "Prompt Adherence",
+                      veo: "98% (Deep Semantic)",
+                      sora: "90% (High Physics)",
+                      runway: "85% (Artistic)",
+                    },
+                    {
+                      feature: "Generation Speed",
+                      veo: "Near Real-time",
+                      sora: "Slow (Minutes)",
+                      runway: "Fast (Turbo mode)",
+                    },
+                    {
+                      feature: "Motion Control",
+                      veo: "Camera & Subject Control",
+                      sora: "Physics Simulation",
+                      runway: "Motion Brush",
+                    },
+                    {
+                      feature: "Availability",
+                      veo: "Open Access (Web)",
+                      sora: "Restricted / Pro",
+                      runway: "Subscription",
+                    },
+                    {
+                      feature: "Cost",
+                      veo: "Free Trial / Freemium",
+                      sora: "$20+/mo (Estimated)",
+                      runway: "Credit Based",
+                    },
+                  ].map((row, i) => (
+                    <tr
+                      key={row.feature}
+                      className={`border-b border-white/5 ${
+                        i % 2 === 0 ? "bg-white/[0.02]" : ""
+                      }`}
+                    >
+                      <td className="py-3 md:py-4 px-4 md:px-6 font-medium text-white/80">
+                        {row.feature}
+                      </td>
+                      <td className="py-3 md:py-4 px-4 md:px-6 text-white border-l border-primary/20 bg-primary/5">
+                        {row.veo}
+                      </td>
+                      <td className="py-3 md:py-4 px-4 md:px-6 text-white/60">
+                        {row.sora}
+                      </td>
+                      <td className="py-3 md:py-4 px-4 md:px-6 text-white/60">
+                        {row.runway}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 md:mt-20">
+              <div className="glass-card p-8 rounded-2xl border-2 border-primary bg-primary/10 flex flex-col relative shadow-[0_0_0_1px_rgba(168,85,247,0.3),0_0_40px_rgba(168,85,247,0.25),0_0_80px_rgba(168,85,247,0.1)] ring-2 ring-primary/20 ring-offset-2 ring-offset-[#0f0a1f] transition-all duration-300 hover:shadow-[0_0_0_1px_rgba(168,85,247,0.5),0_0_50px_rgba(168,85,247,0.35),0_0_100px_rgba(168,85,247,0.15)]">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Veo 3.2 — The Cinematic Powerhouse
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                  Built on DeepMind&apos;s latest transformer architecture, Veo
+                  3.2 represents a quantum leap in semantic understanding. Unlike
+                  its predecessors, Veo 3.2 captures the nuances of
+                  &apos;cinematic lighting&apos; and &apos;camera movement&apos;
+                  with pixel-perfect accuracy. It excels in maintaining character
+                  consistency across long clips, making it the preferred choice
+                  for storytellers and filmmakers in 2026.
+                </p>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">✅</span> Best-in-class
+                    prompt adherence
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">✅</span> 1080p+ native
+                    resolution
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-primary">✅</span> Consistent character
+                    identity
+                  </li>
+                </ul>
+              </div>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 flex flex-col">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  OpenAI Sora — The Physics Simulator
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                  Sora remains a strong contender with its deep understanding of
+                  physical world simulation. It handles complex object
+                  interactions and fluid dynamics exceptionally well. However,
+                  its access remains limited, and it often struggles with
+                  specific camera control directives compared to Veo 3.2.
+                </p>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li className="flex items-center gap-2">
+                    <span className="text-white/60">✅</span> Realistic physics
+                    engine
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-white/60">✅</span> Complex scene
+                    transitions
+                  </li>
+                </ul>
+              </div>
+              <div className="glass-card p-8 rounded-2xl border border-white/10 flex flex-col">
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  Runway Gen-3 Alpha — The Artist&apos;s Tool
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                  Runway Gen-3 continues to offer granular control for editors
+                  with features like Motion Brush and Director Mode. While it
+                  offers high artistic freedom, Veo 3.2 surpasses it in raw
+                  generation speed and prompt comprehension for zero-shot video
+                  creation.
+                </p>
+                <ul className="space-y-2 text-sm text-white/80">
+                  <li className="flex items-center gap-2">
+                    <span className="text-white/60">✅</span> Fine-tuned motion
+                    controls
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-white/60">✅</span> Artistic style
+                    transfer
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="text-center text-white/70 max-w-3xl mx-auto mt-14 md:mt-16 text-lg leading-relaxed">
+              While Sora simulates the world and Runway paints it, Veo 3.2
+              understands it. For users seeking the best balance of speed,
+              quality, and accessibility, Veo 3.2 is the clear winner for 2026
+              video generation.
+            </p>
+
+            <div className="flex justify-center mt-10">
+              <a
+                href="https://www.virax.ai/image2video"
+                className="generate-glow inline-flex items-center justify-center gap-2 bg-white text-slate-900 hover:bg-white/90 font-bold px-8 py-4 rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(124,13,242,0.5)]"
+              >
+                Try Veo 3.2 for Free Now
+                <span className="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="featured-prompts" className="min-h-screen py-24 md:py-32 px-6 relative overflow-hidden flex flex-col justify-center">
+          <div className="max-w-7xl mx-auto relative z-10 w-full">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                Veo 3.2 <span className="text-primary">Featured Prompts</span>
+              </h2>
+              <p className="text-white/40 max-w-2xl mx-auto text-lg">
+                Hand-picked prompts to get the best out of Veo 3.2. Copy and try them in your next creation.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {featuredPrompts.map((item) => (
+                <article
+                  key={item.id}
+                  className="group relative rounded-2xl overflow-hidden p-[1px] bg-gradient-to-br from-white/20 via-primary/30 to-white/10 shadow-xl"
+                >
+                  <div className="relative h-full rounded-2xl bg-slate-900/90 border border-white/5 p-0 flex flex-col">
+                    <div className={`aspect-video w-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0`} aria-hidden>
+                      <span className="material-symbols-outlined text-white/20 text-6xl">movie</span>
+                    </div>
+                    <div className="p-5 md:p-6 flex flex-col flex-1">
+                      <span className="inline-flex items-center gap-1.5 w-fit px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30 mb-3">
+                        <span className="material-symbols-outlined text-sm">{item.tagIcon}</span>
+                        {item.tag}
+                      </span>
+                      <p className="text-white/80 text-sm leading-relaxed mb-4 flex-1 line-clamp-4" title={item.prompt}>
+                        &ldquo;{item.prompt}&rdquo;
+                      </p>
+                      <div className="flex justify-end">
+                        <button
+                          type="button"
+                          onClick={() => handleCopyPrompt(item.id, item.prompt)}
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-primary/30 border border-white/10 hover:border-primary/40 text-white text-sm font-medium transition-all cursor-pointer min-h-[44px] min-w-[44px]"
+                          aria-label={copiedId === item.id ? "Copied!" : "Copy prompt"}
+                        >
+                          {copiedId === item.id ? (
+                            <>
+                              <span className="material-symbols-outlined text-lg text-primary">check</span>
+                              Copied!
+                            </>
+                          ) : (
+                            <>
+                              <span className="material-symbols-outlined text-lg">content_copy</span>
+                              Copy
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="evolution" className="py-24 md:py-32 px-6 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+                Evolution: From Veo 3.1 to <span className="text-primary">3.2</span>
+              </h2>
+              <p className="text-white/50 max-w-3xl mx-auto text-lg leading-relaxed">
+                Google&apos;s Veo 3.1 introduced &quot;Ingredients to Video&quot;—turning reference images into expressive, high-quality clips with strong consistency. Veo 3.2 builds on that foundation with a leap in visual fidelity, creative control, and speed: from broadcast-ready quality to cinematic 8K, from ingredient-based workflows to director-level camera control, and from fast generation to real-time latency.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-sm overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-white/10">
+                        <th scope="col" className="py-4 px-6 text-white/60 font-medium text-sm uppercase tracking-wider">Aspect</th>
+                        <th scope="col" className="py-4 px-6 text-white/70 font-medium">Veo 3.1</th>
+                        <th scope="col" className="py-4 px-6 text-primary font-medium">Veo 3.2</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-white/80">
+                      <tr className="border-b border-white/5">
+                        <td className="py-4 px-6 font-medium text-white/90">Visual Quality</td>
+                        <td className="py-4 px-6">High quality · 1080p / 4K upscaling</td>
+                        <td className="py-4 px-6 text-primary">Cinematic 8K (IMAX Standard)</td>
+                      </tr>
+                      <tr className="border-b border-white/5">
+                        <td className="py-4 px-6 font-medium text-white/90">Control</td>
+                        <td className="py-4 px-6">Ingredients to Video · reference images</td>
+                        <td className="py-4 px-6 text-primary">Directorial Control · precise camera movement</td>
+                      </tr>
+                      <tr>
+                        <td className="py-4 px-6 font-medium text-white/90">Speed</td>
+                        <td className="py-4 px-6">Fast generation</td>
+                        <td className="py-4 px-6 text-primary">Real-time latency (zero delay)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-32 px-6 relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-20">
@@ -413,85 +761,13 @@ export default function Home() {
               </a>
             </div>
             <p className="text-white/30 text-sm max-w-xs leading-relaxed">
-              Empowering the next generation of storytellers with world-class
-              artificial intelligence.
+              Veo32.ai empowers the next generation of storytellers with
+              world-class artificial intelligence.
             </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 md:gap-24">
-            <div className="flex flex-col gap-4">
-              <p className="text-white font-bold text-xs uppercase tracking-widest">
-                Product
-              </p>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-                aria-label="Navigate to ViraX"
-              >
-                Features
-              </a>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-                aria-label="Navigate to ViraX"
-              >
-                API Docs
-              </a>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-                aria-label="Navigate to ViraX"
-              >
-                Showcase
-              </a>
-            </div>
-            <div className="flex flex-col gap-4">
-              <p className="text-white font-bold text-xs uppercase tracking-widest">
-                Company
-              </p>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-              >
-                About Us
-              </a>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-              >
-                Blog
-              </a>
-              <a
-                className="text-white/40 hover:text-white transition-colors text-sm"
-                href="https://www.virax.ai/"
-              >
-                Careers
-              </a>
-            </div>
-            <div className="flex flex-col gap-4">
-              <p className="text-white font-bold text-xs uppercase tracking-widest">
-                Connect
-              </p>
-              <div className="flex gap-4">
-                <a
-                  className="size-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
-                  href="https://www.virax.ai/"
-                >
-                  <span className="material-symbols-outlined text-lg">
-                    brand_awareness
-                  </span>
-                </a>
-                <a
-                  className="size-10 rounded-xl border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
-                  href="https://www.virax.ai/"
-                >
-                  <span className="material-symbols-outlined text-lg">hub</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/20 text-xs">
-          <p>© 2024 Veo Technologies. All rights reserved.</p>
+          <p>© 2026 Veo Technologies. All rights reserved.</p>
           <div className="flex gap-8">
             <a
               className="hover:text-white/40"
@@ -517,6 +793,80 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "SoftwareApplication",
+                name: "Veo 3.2",
+                applicationCategory: "MultimediaApplication",
+                operatingSystem: "Web Browser",
+                offers: {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "USD",
+                  availability: "https://schema.org/InStock",
+                },
+                description:
+                  "Google Veo 3.2 is an advanced AI video generation model capable of creating 1080p+ video clips from text prompts. It features high coherence and cinematic quality.",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.8",
+                  ratingCount: "125",
+                },
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "What is Veo 3.2?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Veo 3.2 is an advanced AI model for both image and video generation. It converts text prompts into high-quality visuals using cutting-edge AI algorithms. This makes text-to-image and text-to-video creation fast and efficient.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What are the key features of Veo 3.2?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Veo 3.2 supports AI image generation, AI video generation, text-to-image, and text-to-video capabilities. It offers high-resolution output, motion consistency, and customizable style control. These features make it ideal for creative and commercial projects.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How does Veo 3.2 differ from other AI models?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Compared to other AI models, Veo 3.2 produces more realistic visuals and smoother video generation. Its advanced text-to-image and text-to-video algorithms ensure better style consistency and motion accuracy.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I customize the style of the generated content?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes, Veo 3.2 allows full style customization for both images and videos. Users can control visual elements, color tones, and motion effects to match their creative vision.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How can I get started with Veo 3.2?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "To get started, sign up on the Veo platform and enter your text prompts. Veo 3.2 will generate AI images and videos quickly, ready for creative or commercial use.",
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

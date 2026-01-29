@@ -3,6 +3,10 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://veo32.ai"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Veo 3.2 - AI Image and Video Generation Model for High-Quality Visual Creation",
   description:
     "Veo 3.2 is an advanced AI image and video generation model enabling high-quality text-to-image and text-to-video creation for creative and commercial use.",

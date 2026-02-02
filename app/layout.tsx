@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   creator: "Veo Technologies",
   publisher: "Veo Technologies",
   icons: {
-    icon: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
-    shortcut: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
-    apple: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+    icon: "https://img.virax.ai/admin_images/1770014352602_vlogo.png",
+    shortcut: "https://img.virax.ai/admin_images/1770014352602_vlogo.png",
+    apple: "https://img.virax.ai/admin_images/1770014352602_vlogo.png",
   },
   verification: {
     google: "60obgy5Ja4eGJ55dWEQz8T_HpYOI_1VedKXXP6zXYCs",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Veo 3.2",
     images: [
       {
-        url: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png",
+        url: "https://img.virax.ai/admin_images/1770014352602_vlogo.png",
         width: 1200,
         height: 630,
         alt: "Veo 3.2 - AI Video Generation",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Veo 3.2 - AI Image and Video Generation Model",
     description:
       "Transform your wildest imaginations into cinematic 8K reality with Veo 3.2.",
-    images: ["https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"],
+    images: ["https://img.virax.ai/admin_images/1770014352602_vlogo.png"],
   },
   robots: {
     index: true,

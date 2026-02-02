@@ -4,48 +4,48 @@ import { useState } from "react";
 import { LazyVideo } from "@/components/LazyVideo";
 
 const trendingVideos = [
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/01ec5f2f-84fc-4eaf-a8bc-c2cbd31c5552_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/1583324e-50b1-498e-a1ec-e39acf81d36b_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/1ae0bf2d-b906-4b7e-968d-d00f3dd27d97_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/57a37114-90dc-4959-9280-0aa9544321e1_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/5968b943-8be8-40bd-89d8-c31111bdc2f7_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/5f0140c6-aa9f-4a85-b772-45d051043a55_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/6fdcfaec-76af-4ad1-a962-ee6eb0878b5f_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/860e3140-3def-412a-98b0-991342899d18_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/9380d07f-2ef9-411c-95ea-09fb4c887916_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/b1b480a6-b2a7-4751-abbf-eba85957ebd4_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/b630e4b8-a0fa-45f6-a1bb-65ae7cc9ffe8_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/c2f580b7-93ee-4b82-b68e-ded30bb23250_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017472849_01ec5f2f-84fc-4eaf-a8bc-c2cbd31c5552_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017617978_1583324e-50b1-498e-a1ec-e39acf81d36b_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770020458854_1ae0bf2d-b906-4b7e-968d-d00f3dd27d97_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017548196_57a37114-90dc-4959-9280-0aa9544321e1_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017581626_5968b943-8be8-40bd-89d8-c31111bdc2f7_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017507462_5f0140c6-aa9f-4a85-b772-45d051043a55_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017528428_6fdcfaec-76af-4ad1-a962-ee6eb0878b5f_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017564580_860e3140-3def-412a-98b0-991342899d18_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017601564_9380d07f-2ef9-411c-95ea-09fb4c887916_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017636476_b1b480a6-b2a7-4751-abbf-eba85957ebd4_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017655739_b630e4b8-a0fa-45f6-a1bb-65ae7cc9ffe8_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017670869_c2f580b7-93ee-4b82-b68e-ded30bb23250_hd.mp4",
 ];
 
 const cinematicVideos = [
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/0136bf9d-a9ec-49c8-896d-41ebdc98860d_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/143a83d9-5731-45f6-a3cd-a26103fe334f_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/57a37114-90dc-4959-9280-0aa9544321e1_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/5a7bd9ec-7c9b-4283-b6ea-7e256c392a56_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/7fde102d-b42a-4553-b11e-4983cdac1460_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/985aff0f-4024-4094-91be-ecb3080bfa8a_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/a4ee3c2b-08f1-4304-a414-19c6e9c6a234_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/a63744c8-1aa3-4f58-9aa0-1844100a28b2_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/a7f8ec7f-0e99-4d57-baf5-eb7aa049ca34_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/ba94a4eb-7348-4b66-9acf-3a784b39eeed_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/be1f17b1-0dcb-4cd5-b215-99d52918d80c_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/be55e554-062e-4364-b80c-735804f47e17_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019210209_0136bf9d-a9ec-49c8-896d-41ebdc98860d_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019233452_143a83d9-5731-45f6-a3cd-a26103fe334f_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770017548196_57a37114-90dc-4959-9280-0aa9544321e1_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019142991_5a7bd9ec-7c9b-4283-b6ea-7e256c392a56_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019172835_7fde102d-b42a-4553-b11e-4983cdac1460_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019253776_985aff0f-4024-4094-91be-ecb3080bfa8a_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019314473_a4ee3c2b-08f1-4304-a414-19c6e9c6a234_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019356146_a63744c8-1aa3-4f58-9aa0-1844100a28b2_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019337032_a7f8ec7f-0e99-4d57-baf5-eb7aa049ca34_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019372443_ba94a4eb-7348-4b66-9acf-3a784b39eeed_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019392406_be1f17b1-0dcb-4cd5-b215-99d52918d80c_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019420917_be55e554-062e-4364-b80c-735804f47e17_hd.mp4",
 ];
 
 const animeVideos = [
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/0d83d5f4-f027-4461-bd4d-711befc65285_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/0e904035-01ec-4ce4-9651-f86a8b9588c7_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/2953ec82-a04a-4c57-8968-a748b51a2e36_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/6b5f05bb-3ad4-4465-8aab-27affb44b2a7_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/852f1be1-0ad3-4cc8-a5e0-6e32e23aa181_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/8706e66f-2c70-473a-ae7b-94353ad2d1cb_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/90f03655-7a25-4331-8ffd-211464176d86_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/9133c40b-88c8-4d09-93e6-11be7a925849_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/9a915c71-cae9-448d-8dd2-e36da4643b26_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/a1163f7a-7aaf-4ec8-864d-705e9c42170b_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/fb572d0d-c38c-4cdd-92e1-0b1b4a2bb1fe_hd.mp4",
-  "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/fd33361c-5a1a-4e88-bbcb-930d76ba7766_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019444529_0d83d5f4-f027-4461-bd4d-711befc65285_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019465380_0e904035-01ec-4ce4-9651-f86a8b9588c7_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019545501_2953ec82-a04a-4c57-8968-a748b51a2e36_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019482087_6b5f05bb-3ad4-4465-8aab-27affb44b2a7_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019524795_852f1be1-0ad3-4cc8-a5e0-6e32e23aa181_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019578562_8706e66f-2c70-473a-ae7b-94353ad2d1cb_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019510289_90f03655-7a25-4331-8ffd-211464176d86_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019596672_9133c40b-88c8-4d09-93e6-11be7a925849_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019496555_9a915c71-cae9-448d-8dd2-e36da4643b26_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019610979_a1163f7a-7aaf-4ec8-864d-705e9c42170b_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019625029_fb572d0d-c38c-4cdd-92e1-0b1b4a2bb1fe_hd.mp4",
+  "https://img.virax.ai/admin_videos/1770019642808_fd33361c-5a1a-4e88-bbcb-930d76ba7766_hd.mp4",
 ];
 
 const featuredPrompts = [
@@ -111,7 +111,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <a href="https://www.virax.ai/">
               <img
-                src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
+                src="https://img.virax.ai/admin_images/1770014352602_vlogo.png"
                 alt="Veo 3.2 Logo"
                 width={36}
                 height={36}
@@ -178,7 +178,7 @@ export default function Home() {
               aria-label="Veo 3.2 hero video showcasing AI-generated cinematic content"
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             >
-              <source src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/herovideo2.mp4" type="video/mp4" />
+              <source src="https://img.virax.ai/admin_videos/1770014429013_herovideo2.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 hero-video-overlay z-10" />
           </div>
@@ -755,7 +755,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <a href="https://www.virax.ai/">
                 <img
-                  src="https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/vlogo.png"
+                  src="https://img.virax.ai/admin_images/1770014352602_vlogo.png"
                   alt="Veo 3.2 Logo"
                   width={36}
                   height={36}

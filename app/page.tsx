@@ -56,7 +56,7 @@ const featuredPrompts = [
     prompt:
       "Cinematic fashion film: a model in a metallic silver gown under a single spotlight in a dark minimalist studio, glossy floor reflections, slow dolly-in, hyper-realistic 8k, volumetric haze, high-contrast lighting, anamorphic look.",
     gradient: "from-violet-900/80 via-fuchsia-900/60 to-slate-900",
-    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-1.mp4",
+    videoUrl: "https://img.virax.ai/admin_videos/1770021351721_prompt-1.mp4",
   },
   {
     id: "3d",
@@ -65,7 +65,7 @@ const featuredPrompts = [
     prompt:
       "Low-angle tracking shot of a biker racing down a sunlit desert highway, armored rider, roaring muscle trucks kicking up dust, Mad Max chase vibe, cinematic teal-orange grade, 4K, motion blur.",
     gradient: "from-amber-900/60 via-orange-800/50 to-slate-900",
-    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-2.mp4",
+    videoUrl: "https://img.virax.ai/admin_videos/1770021378304_prompt-2.mp4",
   },
   {
     id: "macro",
@@ -74,7 +74,7 @@ const featuredPrompts = [
     prompt:
       "Cinematic orbital shot: lone astronaut drifting by a damaged satellite above Earth's curved horizon, sunrise lens flare, floating debris, slow rotating camera, ultra-real 4K, deep space contrast.",
     gradient: "from-emerald-900/70 via-teal-900/50 to-slate-900",
-    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-4.mp4",
+    videoUrl: "https://img.virax.ai/admin_videos/1770021419297_prompt-4.mp4",
   },
   {
     id: "vintage",
@@ -83,7 +83,7 @@ const featuredPrompts = [
     prompt:
       "Cinematic street-level shot of a lone hooded figure walking through a rain-soaked neon alley in Neo-Tokyo, steam vents, wet pavement reflections, cyberpunk vibe, ultra-real 8k, volumetric fog.",
     gradient: "from-stone-700/70 via-amber-900/30 to-slate-900",
-    videoUrl: "https://nxx81ahw5qktqjil.public.blob.vercel-storage.com/prompt-3.mp4",
+    videoUrl: "https://img.virax.ai/admin_videos/1770021399017_prompt-3.mp4",
   },
 ];
 
@@ -534,7 +534,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="featured-prompts" className="section-below-fold min-h-screen py-24 md:py-32 px-6 relative overflow-hidden flex flex-col justify-center">
+        <section id="featured-prompts" className="min-h-screen py-24 md:py-32 px-6 relative overflow-hidden flex flex-col justify-center">
           <div className="max-w-7xl mx-auto relative z-10 w-full">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -556,6 +556,7 @@ export default function Home() {
                         src={item.videoUrl}
                         ariaLabel={`Featured prompt: ${item.tag}`}
                         className="absolute inset-0 h-full w-full object-cover"
+                        preload="auto"
                       />
                     </div>
                     <div className="p-5 md:p-6 flex flex-col flex-1">

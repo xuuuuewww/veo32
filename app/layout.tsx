@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { BASE_URL, getAlternatesLanguages } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veo32.ai"),
+  metadataBase: new URL(BASE_URL),
   alternates: {
     canonical: "/",
+    languages: getAlternatesLanguages(),
   },
   title: "Veo 3.2 - AI Image and Video Generation Model for High-Quality Visual Creation",
   description:
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     title: "Veo 3.2 - AI Image and Video Generation Model",
     description:
       "Transform your wildest imaginations into cinematic 8K reality with Veo 3.2. The frontier of AI cinematography is here.",
-    url: "https://veo32.com",
+    url: BASE_URL,
     siteName: "Veo 3.2",
     images: [
       {
@@ -68,13 +71,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  const lang = headersList.get("x-locale") ?? "en";
   return (
-    <html lang="en" className="dark">
+    <html lang={lang} className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

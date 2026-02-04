@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { LazyVideo } from "@/components/LazyVideo";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import type { Locale, Translations } from "@/lib/translations";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { translations, getNavFooterT } from "@/lib/translations";
+import type { Locale } from "@/lib/translations";
 
 const trendingVideos = [
   "https://img.virax.ai/admin_videos/1770017472849_01ec5f2f-84fc-4eaf-a8bc-c2cbd31c5552_hd.mp4",
@@ -51,11 +53,11 @@ const animeVideos = [
 ];
 
 type HomeContentProps = {
-  t: Translations;
   locale: Locale;
 };
 
-export function HomeContent({ t, locale }: HomeContentProps) {
+export function HomeContent({ locale }: HomeContentProps) {
+  const t = translations[locale];
   const [activeTab, setActiveTab] = useState<"trending" | "cinematic" | "anime">("trending");
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -72,68 +74,10 @@ export function HomeContent({ t, locale }: HomeContentProps) {
         ? cinematicVideos
         : animeVideos;
 
+  const navT = getNavFooterT(t);
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 glass-header">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <a href="https://www.virax.ai/" aria-label={t.aria.navVirax}>
-              <img
-                src="https://img.virax.ai/admin_images/1770014352602_vlogo.png"
-                alt="Veo 3.2 Logo"
-                width={36}
-                height={36}
-                className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
-              />
-            </a>
-          </div>
-          <nav className="hidden md:flex items-center gap-10">
-            <a
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="https://www.virax.ai/"
-              aria-label={t.aria.navVirax}
-            >
-              {t.nav.features}
-            </a>
-            <a
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="https://www.virax.ai/"
-              aria-label={t.aria.navVirax}
-            >
-              {t.nav.gallery}
-            </a>
-            <a
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="https://www.virax.ai/"
-              aria-label={t.aria.navVirax}
-            >
-              {t.nav.pricing}
-            </a>
-            <a
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-              href="https://www.virax.ai/"
-              aria-label={t.aria.navVirax}
-            >
-              {t.nav.api}
-            </a>
-          </nav>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://www.virax.ai/"
-              className="text-white/70 hover:text-white text-sm font-medium px-4"
-            >
-              {t.nav.logIn}
-            </a>
-            <a
-              href="https://www.virax.ai/"
-              className="bg-white text-slate-900 hover:bg-white/90 text-sm font-bold px-6 py-2.5 rounded-lg transition-all transform hover:scale-105 shadow-[0_0_18px_rgba(148,163,184,0.45)]"
-            >
-              {t.nav.getStarted}
-            </a>
-          </div>
-        </div>
-      </header>
-
+      <SiteHeader t={navT} />
       <main>
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0 z-0">
@@ -541,39 +485,7 @@ export function HomeContent({ t, locale }: HomeContentProps) {
         </section>
       </main>
 
-      <footer className="border-t border-white/5 py-20 px-6 bg-black/50">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <a href="https://www.virax.ai/" aria-label={t.aria.navVirax}>
-                <img
-                  src="https://img.virax.ai/admin_images/1770014352602_vlogo.png"
-                  alt="Veo 3.2 Logo"
-                  width={36}
-                  height={36}
-                  className="h-9 w-auto select-none drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
-                />
-              </a>
-            </div>
-            <p className="text-white/30 text-sm max-w-xs leading-relaxed">{t.footer.tagline}</p>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/20 text-xs">
-          <p>{t.footer.copyright}</p>
-          <div className="flex flex-wrap items-center gap-6 md:gap-8">
-            <LanguageSwitcher currentLocale={locale} />
-            <a className="hover:text-white/40" href="https://www.virax.ai/" aria-label={t.aria.navVirax}>
-              {t.footer.terms}
-            </a>
-            <a className="hover:text-white/40" href="https://www.virax.ai/" aria-label={t.aria.navVirax}>
-              {t.footer.privacy}
-            </a>
-            <a className="hover:text-white/40" href="https://www.virax.ai/" aria-label={t.aria.navVirax}>
-              {t.footer.cookies}
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter t={navT} locale={locale} />
     </>
   );
 }

@@ -1,12 +1,11 @@
 "use client";
 
 import { HomeContent } from "@/components/HomeContent";
-import { translations } from "@/lib/translations";
 
 export default function Home() {
   return (
     <>
-      <HomeContent t={translations.en} locale="en" />
+      <HomeContent locale="en" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

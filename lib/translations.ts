@@ -2381,6 +2381,17 @@ export const translations: Record<Locale, Translations> = {
   },
 };
 
+/** Serializable subset for SiteHeader/SiteFooter (no functions). Use when passing to Client Components. */
+export type NavFooterT = {
+  nav: Translations["nav"];
+  footer: Translations["footer"];
+  aria: { navVirax: string };
+};
+
+export function getNavFooterT(t: Translations): NavFooterT {
+  return { nav: t.nav, footer: t.footer, aria: { navVirax: t.aria.navVirax } };
+}
+
 export const localeConfig = [
   { code: "en" as const, path: "/", label: "English" },
   { code: "es" as const, path: "/es", label: "Español" },

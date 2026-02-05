@@ -24,29 +24,30 @@ export function BlogTableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <nav
-      className="sticky top-24 w-56 shrink-0 hidden lg:block"
-      aria-label="Article contents"
+    <div
+      className="fixed z-10 top-56 left-[calc(1.5rem+max(0px,(100vw-72rem)/2))] w-56 max-h-[calc(100vh-14rem)] overflow-y-auto hidden lg:block"
     >
-      <p className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
-        Contents
-      </p>
-      <ul className="space-y-1.5 border-l border-white/10 pl-4">
-        {headings.map(({ id, text }) => (
-          <li key={id}>
-            <a
-              href={`#${id}`}
-              className="block text-sm text-white/60 hover:text-white transition-colors py-1 border-l-2 border-transparent -ml-[18px] pl-4 hover:border-primary/60 focus:outline-none focus-visible:border-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              {text}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+      <nav aria-label="Article contents">
+        <p className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
+          Contents
+        </p>
+        <ul className="space-y-1.5 border-l border-white/10 pl-4">
+          {headings.map(({ id, text }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className="block text-sm text-white/60 hover:text-white transition-colors py-1 border-l-2 border-transparent -ml-[18px] pl-4 hover:border-primary/60 focus:outline-none focus-visible:border-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }

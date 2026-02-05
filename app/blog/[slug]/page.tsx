@@ -70,15 +70,24 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <PageWithNav>
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <nav className="mb-8">
-          <Link
-            href="/blog"
-            className="text-white/60 hover:text-white text-sm transition-colors"
-          >
-            ← Blog
-          </Link>
+        {/* Fixed "← Blog" bar: reserve space so title doesn't sit under it */}
+        <div className="h-14 shrink-0" aria-hidden="true" />
+        <nav
+          className="fixed z-10 top-28 left-0 right-0 flex justify-center pointer-events-none"
+          aria-label="Back to blog"
+        >
+          <div className="w-full max-w-6xl px-6 pointer-events-auto">
+            <Link
+              href="/blog"
+              className="text-white/60 hover:text-white text-sm transition-colors inline-block"
+            >
+              ← Blog
+            </Link>
+          </div>
         </nav>
-        <div className="flex gap-12">
+        <div className="flex gap-12 items-start">
+          {/* Spacer for fixed TOC so article doesn't overlap */}
+          <div className="w-56 shrink-0 hidden lg:block" aria-hidden="true" />
           <BlogTableOfContents />
           <article className="min-w-0 flex-1">
             <header className="mb-8">
